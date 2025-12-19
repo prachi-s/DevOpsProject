@@ -76,6 +76,7 @@ terraform apply
 ```
 
 2. To run deploy.yaml, clone this github repo and set the following github secrets according to your Workflow Identity Federation configurations. This workflow can be triggered manually. 
+
 | Secret Name                 | Purpose                                        |
 | --------------------------- | ---------------------------------------------- |
 | `GCP_PROJECT_ID`            | Google Cloud project ID used for deployments   |
