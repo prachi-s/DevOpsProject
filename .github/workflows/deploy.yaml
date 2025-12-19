@@ -54,6 +54,6 @@ jobs:
       working-directory: ./terraform
       run: terraform plan -var="image=$IMAGE_URI" -out=tfplan
 
-    # - name: Terraform Apply
-    #   working-directory: ./terraform
-    #   run: terraform apply -auto-approve tfplan
+    - name: Terraform Apply
+      working-directory: ./terraform
+      run: terraform apply -auto-approve tfplan
