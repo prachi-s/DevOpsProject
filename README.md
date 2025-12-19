@@ -50,21 +50,29 @@ make test
 ### Extra Credit!!
 1. A remote Terraform backend is set up in terraform/backend.tf for maintaining terraform state. Uncomment the entire code present in this file and ensure you are updating the bucket and prefix values to your GCS bucket. You can create a new GCS bucket using this command
 ```bash
-gcloud storage buckets create gs://my-terraform-state \
+gcloud storage buckets create gs://<your-bucket> \
     --location=us-central1 \
     --uniform-bucket-level-access
 
-gcloud storage buckets update gs://my-terraform-state --versioning
+gcloud storage buckets update gs://<your-bucket> --versioning
 
 ```
 
+Your backend.tf should look like this
 ```terraform
 terraform {
    backend "gcs" {
-     bucket = "terraform-state-bucket74"
-     prefix = "terraform/state"
+     bucket = "your-bucket"
+     prefix = "your-prefix"
    }
 }
+```
+
+Once bucket is created and backend.tf is updated, run the following terraform commands
+```bash
+terraform init -migrate-state
+terraform plan
+terraform apply
 ```
 
 
