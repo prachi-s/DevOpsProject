@@ -75,5 +75,8 @@ terraform plan
 terraform apply
 ```
 
-
-
+2. To run deploy.yaml, clone this github repo and set the following github secrets according to your Workflow Identity Federation configurations.
+GCP_PROJECT_ID - your project id
+GCP_WORKLOAD_ID_PROVIDER - your workload identity provider ID
+GCP_SERVICE_ACCOUNT_EMAIL - your service account with workload identity user role
+This workflow can be triggered manually. 
