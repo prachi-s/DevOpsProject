@@ -4,8 +4,8 @@
 
 ### Steps to pull the container from artifact registry
 ```bash
-docker pull us-central1-docker.pkg.dev/myproject-481217/myregistry/simpletimeservice:v1.0.0
-docker run -p 8000:8080 -d us-central1-docker.pkg.dev/myproject-481217/myregistry/simpletimeservice:v1.0.0
+docker pull us-central1-docker.pkg.dev/myproject-481217/myregistry/simpletimeservice:v1.0.1
+docker run -p 8000:8080 -d us-central1-docker.pkg.dev/myproject-481217/myregistry/simpletimeservice:v1.0.1
 curl http://localhost:8000
 ```
 
@@ -47,7 +47,25 @@ make test
 ```
 
 
+### Extra Credit!!
+1. A remote Terraform backend is set up in terraform/backend.tf for maintaining terraform state. Uncomment the entire code present in this file and ensure you are updating the bucket and prefix values to your GCS bucket. You can create a new GCS bucket using this command
+```bash
+gcloud storage buckets create gs://my-terraform-state \
+    --location=us-central1 \
+    --uniform-bucket-level-access
 
+gcloud storage buckets update gs://my-terraform-state --versioning
+
+```
+
+```terraform
+terraform {
+   backend "gcs" {
+     bucket = "terraform-state-bucket74"
+     prefix = "terraform/state"
+   }
+}
+```
 
 
 
