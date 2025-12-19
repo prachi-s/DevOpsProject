@@ -39,8 +39,8 @@ jobs:
       run: |
         docker build -t $IMAGE_URI .
 
-    # - name: Push image
-    #   run: docker push $IMAGE_URI
+    - name: Push image
+      run: docker push $IMAGE_URI
 
     # - name: Install Terraform
     #   uses: hashicorp/setup-terraform@v3
