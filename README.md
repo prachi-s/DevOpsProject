@@ -1,5 +1,6 @@
 # SimpleTimeService
 
+### TASK 1
 
 ### Steps to pull the container from artifact registry
 ```bash
@@ -9,11 +10,44 @@ curl http://localhost:8000
 ```
 
 
-### Steps to build and run the container
+### Steps to build and run the container locally
 ```bash
 cd app
 docker build -t myapp:v1.0.0 .
 docker run -p 8000:8080 -d myapp:v1.0.0
 curl http://localhost:8000
 ```
+
+### TASK 2
+
+1. Create a new GCP project/use an existing one.
+2. Enable required APIs within your GCP project using gcloud command - 
+```bash
+gcloud services enable \
+  run.googleapis.com \
+  compute.googleapis.com \
+  vpcaccess.googleapis.com \
+  artifactregistry.googleapis.com \
+  cloudresourcemanager.googleapis.com \
+  iam.googleapis.com
+```
+
+3. Update terraform/terraform.tfvars file with your project's values
+4. Run terraform plan and apply
+```bash
+cd terraform
+terraform plan
+terraform apply
+```
+
+5. To test the cloud run service, run the following command 
+** Make sure you are within the terraform folder before running the above command
+```bash
+make test
+```
+
+
+
+
+
 
