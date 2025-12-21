@@ -76,7 +76,7 @@ terraform plan
 terraform apply
 ```
 
-2. To run deploy.yaml, clone this github repo and set the following github secrets according to your Workflow Identity Federation configurations. This workflow can be triggered manually. 
+2. A workflow has been created deploy.yaml to authenticate to Google Cloud, build and push a docker image, and update this image in the cloud run service via terraform plan and apply. To run deploy.yaml, clone this github repo and set the following github secrets according to your Workflow Identity Federation configurations. This workflow can be triggered manually. 
 
 | Secret Name                 | Purpose                                        |
 | --------------------------- | ---------------------------------------------- |
