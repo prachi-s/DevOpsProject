@@ -41,7 +41,8 @@ terraform apply
 ```
 
 5. To test the cloud run service, run the following command 
-** Make sure you are within the terraform folder before running the above command
+
+** Make sure you are within the terraform folder before running the below command
 ```bash
 make test
 ```
